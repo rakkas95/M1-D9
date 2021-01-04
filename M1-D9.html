@@ -15,75 +15,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bingo</title>
-<style>
-  body {
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    color: darkblue;
-    max-width: 768px;
-    margin: 0 auto;
-    font-size: 18px;
-  }
-
-  #bingo {
-    background-color: olive;
-    color: whitesmoke;
-    width: 100%;
-  }
-
-  .bingoCell {
-    display: inline-block;
-    color: whitesmoke;
-    width: 5%;
-    text-align: center;
-    min-height: 100px;
-    border: 1px solid transparent;
-  }
-
-  
-  
-
-</style>
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
   <h1> Let's Play A Game of Bingo! </h1>
-<div id="bingo">
-  <!--bingo cells will be inserted here-->
-</div>
-<div>
-  <input type="button" value="Random Number" onclick="randomizeNumber()">
-</div>
+  <div id="bingo">
+    <!--bingo cells will be inserted here-->
+  </div>
+  <div>
+    <input type="button" value="Random Number" onclick="randomizeNumber()">
+  </div>
 
-<script>
-
-  window.onload = function () {
-    const bingo = document.querySelector("#bingo");
-
-    for (let i = 0; i < 76; i++ ) {
-      const child = document.createElement("div");
-      child.className = "box";
-      child.classList = "bingoCell";
-      
-      const box = document.createElement("h3")
-      const bingoNumber = i + 1;
-      box.innerText = bingoNumber;
-
-      child.appendChild(box)
-      bingo.appendChild(child);
-    }
-  };
-
-  const randomizeNumber = function () {
-    let number = Math.floor(Math.random() * 76) + 1
-    console.log(number)
-    let allBox = document.querySelectorAll('.bingoCell')
-    let foundBox;
-    console.log(foundBox)
-    allBox[number - 1].style.backgroundColor = 'black'
-  };
-
-</script>
+  <script src="./index.js"></script>
 
 </body>
+
 </html>
